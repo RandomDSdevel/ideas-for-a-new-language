@@ -60,7 +60,7 @@ A collection is a classic idea in programming, and a useful one. Historically mo
 For simplicities sake, and because almost all other data structures can be built from sub-classes of just two distinct types of collections, only those two types of collections are going to be specified for inclusion as built-in parts of the type-system. Those are:
 
   1. The Array
-  2. The Dictionary
+  1. The Dictionary
 
 Truthfully the Array could be defined as a sub-type of the dictionary with the key restricted to just integers, but by providing two distinct types we allow for some easier optimization and different choices for data-structure design.
 
