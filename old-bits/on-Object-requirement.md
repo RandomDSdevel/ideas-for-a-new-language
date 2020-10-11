@@ -1,4 +1,4 @@
-#On the base of everything inheriting from 'Object'
+# On the base of everything inheriting from 'Object'
 
 ### __NOTE__
 The use of the term "inherit" here has been pointed out to be rather misleading. As is the inclusion of 'Object' in the default/standard types list. In truth the concept here is that there are a base set of facilities that all Objects will have and never need to use at all. Use of the 'inherits' keyword was selected to specifically note that the default implementation - or the one of the next level up in the type hierarchy - could be used via something like the C++ 'super' keyword. This would make 'Object' more like the proposed C++ Concept system.
