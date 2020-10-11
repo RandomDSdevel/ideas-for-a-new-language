@@ -47,40 +47,40 @@ This leads to the following set of proposed operators - 28 in total, grouped int
 ### Original Thoughts/Design follows
 ### Basics of any programming language
 1. Math operations
-  * At its core a computer does exactly what the name implies - computes. So every language needs a basic set of math operations
-    1. Addition
-	2. Subtract
-  * From just addition and subtraction all other operations can be built - this is one of the core concepts of a RISC computer. However, humans don't work this way, so a more complete list of operations is:
-    1. Addition
-	2. Subtraction
-	3. Multiplication
-	4. Division
-  * From those 4 any required mathematical operation can be performed on integers. This does lead to some issues, however, when pure integer operations are not available or when operations are not being carried out on integers. This means that at least one more operation is required... The modulo operation. (Which is part of all modern encryption and a key part of the one known unbreakable encryption) More than that, however, most computers also provide a bitwise shift and a bitwise "rotate" operation - both of which get used, to some extent, in encryption and numerous other fields. (even though bitwise shifts are, basically, just multiplication and division by powers-of-two) Including the shift and rotate operations, this makes the final list of mathematical operations...
-    1. Addition
-	2. Subtraction
-	3. Multiplication
-	4. Division
-	5. Modulo
-	6. Shift Left
-	7. Rotate Left
-	8. Shift Right
-	9. Rotate Right
-2. Without the ability to compare numbers, all the computation in the world is useless. In its most generalized form there would be a single "conditional" keyword that allowed for all possible uses and could be specialized off in some manner. Invariably this will lead to some changes to the language away from the general "it should be like C" standard - however this is acceptable. Basic comparisons are...
-  * Equality - do two given objects have a value (via some given 'value' member function, perhaps) that are equal ?
-  * Inequality - without care for which is greater or lesser, do two objects have inequal values ?
-  * Less-than - specialized case of inequality where the test is whether one object has a value that is less-than another
-  * Greater-than - the opposite test of 'Less-than'
-  * In all of the above listed tests, it should likely be relegated to an overridable function or set of functions of the generic 'Object' class what the result of any given comparison would be. This allows for the maximum flexibility and also allows for custom objects to fit into the existing structure of operators without having to directly provide for a customized implementation of such.
-3. Binary combination
-  * These are operations that a lot of programmers are familiar with, even if they do not think of them as more than simple syntactic sugar (I, personally, did not back when I was first learning to program)
-    1. AND
-	2. OR
-	3. XOR
-	4. NOT
-  * These four operations are well defined boolean/binary operations and can actually be used, along with the shift operators, to replicate the 7 non-shift math operations. In practical use, most programmers will only use these to combine the results of various comparison operations that form the base of input to a condition operation.
-4. Other operations
-  * At this point there is only one other generic, always needed operation - Assignment.
-  * A direct, "literally equal" comparison might be handy - this would apply in situations where the type and value are both equal or, potentially, where an object is being compared to itself. (perhaps as part of finding a given object in a linked list or similar)
+   * At its core a computer does exactly what the name implies - computes. So every language needs a basic set of math operations
+     1. Addition
+     1. Subtract
+   * From just addition and subtraction all other operations can be built - this is one of the core concepts of a RISC computer. However, humans don't work this way, so a more complete list of operations is:
+     1. Addition
+     1. Subtraction
+     1. Multiplication
+     1. Division
+   * From those 4 any required mathematical operation can be performed on integers. This does lead to some issues, however, when pure integer operations are not available or when operations are not being carried out on integers. This means that at least one more operation is required... The modulo operation. (Which is part of all modern encryption and a key part of the one known unbreakable encryption) More than that, however, most computers also provide a bitwise shift and a bitwise "rotate" operation - both of which get used, to some extent, in encryption and numerous other fields. (even though bitwise shifts are, basically, just multiplication and division by powers-of-two) Including the shift and rotate operations, this makes the final list of mathematical operations...
+     1. Addition
+     1. Subtraction
+     1. Multiplication
+     1. Division
+     1. Modulo
+     1. Shift Left
+     1. Rotate Left
+     1. Shift Right
+     1. Rotate Right
+1. Without the ability to compare numbers, all the computation in the world is useless. In its most generalized form there would be a single "conditional" keyword that allowed for all possible uses and could be specialized off in some manner. Invariably this will lead to some changes to the language away from the general "it should be like C" standard - however this is acceptable. Basic comparisons are...
+   * Equality - do two given objects have a value (via some given 'value' member function, perhaps) that are equal ?
+   * Inequality - without care for which is greater or lesser, do two objects have inequal values ?
+   * Less-than - specialized case of inequality where the test is whether one object has a value that is less-than another
+   * Greater-than - the opposite test of 'Less-than'
+   * In all of the above listed tests, it should likely be relegated to an overridable function or set of functions of the generic 'Object' class what the result of any given comparison would be. This allows for the maximum flexibility and also allows for custom objects to fit into the existing structure of operators without having to directly provide for a customized implementation of such.
+1. Binary combination
+   * These are operations that a lot of programmers are familiar with, even if they do not think of them as more than simple syntactic sugar (I, personally, did not back when I was first learning to program)
+     1. AND
+     1. OR
+     1. XOR
+     1. NOT
+   * These four operations are well defined boolean/binary operations and can actually be used, along with the shift operators, to replicate the 7 non-shift math operations. In practical use, most programmers will only use these to combine the results of various comparison operations that form the base of input to a condition operation.
+1. Other operations
+   * At this point there is only one other generic, always needed operation - Assignment.
+   * A direct, "literally equal" comparison might be handy - this would apply in situations where the type and value are both equal or, potentially, where an object is being compared to itself. (perhaps as part of finding a given object in a linked list or similar)
   
 ### Proposed 'operators' mapped to operations named above
 1. Addition:       +
