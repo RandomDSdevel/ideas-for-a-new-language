@@ -101,6 +101,7 @@ This leads to the following set of proposed operators - 28 in total, grouped int
 16. OR:            ||
 17. XOR:           ~
 18. NOT:           !
+
   * 18 operators, total. One of them a partial combination of two others.
   * These follow the C/C++ standard for operators in everything except for assignment, where the Pascal standard is used. In the case of assignment the Pascal standard is used as a means to help catch a common error seen in numerous C and C++ programs.
   * I'd actually prefer it if classic math operators could be used for all of the given operations that have direct mappings, but this would make writing programs in this language difficult for people using classic keyboards.
