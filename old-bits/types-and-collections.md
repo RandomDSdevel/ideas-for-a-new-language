@@ -64,11 +64,11 @@ For simplicities sake, and because almost all other data structures can be built
 
 Truthfully the Array could be defined as a sub-type of the dictionary with the key restricted to just integers, but by providing two distinct types we allow for some easier optimization and different choices for data-structure design.
 
-  1. Array
+ 1. Array
     * a storage type with integer keys, can be easily stored as a linear section of memory
     * for utility: pushFront() and append() for adding items to the start/end of the array
     * length member variable storing the number of items in the array
-  1. Dictionary
+ 1. Dictionary
     * Also called an associative array this uses a creation-time defined type as the key
     * Versions which use a string as the key are known, classically, as hash-tables or hash-maps
     * Some version of hashing should be used to turn the key into a value more machine friendly
