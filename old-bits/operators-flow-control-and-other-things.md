@@ -84,23 +84,23 @@ This leads to the following set of proposed operators - 28 in total, grouped int
   
 ### Proposed 'operators' mapped to operations named above
 1. Addition:       +
-2. Subtraction:    -
-3. Multiplication: *
-4. Division:       /
-5. Modulo:         %
-6. Shift Left:     <<
-7. Rotate Left:    <<<
-8. Shift Right:    >>
-9. Rotate Right:   >>>
-10. Equality:      ==
-11. Inequality:    !=
-12. Less-than:     <
-13. Greater-than:  >
-14. Assignment:    :=
-15. AND:           &&
-16. OR:            ||
-17. XOR:           ~
-18. NOT:           !
+1. Subtraction:    -
+1. Multiplication: *
+1. Division:       /
+1. Modulo:         %
+1. Shift Left:     <<
+1. Rotate Left:    <<<
+1. Shift Right:    >>
+1. Rotate Right:   >>>
+1. Equality:      ==
+1. Inequality:    !=
+1. Less-than:     <
+1. Greater-than:  >
+1. Assignment:    :=
+1. AND:           &&
+1. OR:            ||
+1. XOR:           ~
+1. NOT:           !
 
  * 18 operators, total. One of them a partial combination of two others.
  * These follow the C/C++ standard for operators in everything except for assignment, where the Pascal standard is used. In the case of assignment the Pascal standard is used as a means to help catch a common error seen in numerous C and C++ programs.
