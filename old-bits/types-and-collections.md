@@ -28,6 +28,7 @@ For the widest degree of genericity and utility the following base types are spe
     * For the generic utility of such, rather than having a "pointer" - inclusion of which, in this language, is still undecided - as the generic handle for passing around references to a function, there is a specific 'Function' type.
 	* This type acts as both a handle that can be used to indirectly call a function, but also as the base type of a closure and lambda/anonymous function.
 	* Is also a part of the reflection system and contains information about the function, its parent object, source-file, source-line, etc...
+
   * ___NOTICE___: Three of the types mentioned in the [Readme](ideas-for-a-new-language/README.md) that are not in the above list. Those will be covered in a bit, after some exposition, explanation and definition of terms.
   
 The six above types - truthfully just 3 of them - can be used to represent something like ninety-five percent (yes, 95%!) of the data out there right now. However, to help the programmers and save them some time a few more types - really just specializations and sub-classes of one of the above types - is required.
