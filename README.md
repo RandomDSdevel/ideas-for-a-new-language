@@ -25,12 +25,12 @@ I am not claiming to have all the answers. Large parts of this specification wil
   * No module shall insert itself into the root namespace - this can be done by the user of the module, but not the module itself
     * No exceptions!
 	* The root namespace is for the end-user of the language and the language itself (for keywords only)
-2. Modules are, at their root, a collection of objects
+1. Modules are, at their root, a collection of objects
   * Everything is an objects
   * Compiler is free to reduce an object representing a primitive to that primitive if no extended functions are used
     * That is, if it otherwise passes all requirements of the type!
   * Everything has a type - these types are important and while you can convert between them, this should not be done unless absolutely necessary
-3. Objects have a persistent lookup table that defines their functions and data members
+1. Objects have a persistent lookup table that defines their functions and data members
   * Every "dot" operator is actually a call to a fixed lookup function that returns the location
     * This built-in function of the every Object can be overridden
   * Adding the postfix parentheses-list turns this into a function call
@@ -38,13 +38,13 @@ I am not claiming to have all the answers. Large parts of this specification wil
     * This is another built-in of every object that can also be overridden
   * The address-lookup and "call" functions should only be overridden if absolutely necessary.
     * They exist to help cover some utility-function zones and add some syntactic-sugar to allow for easier use of some facilities
-4. The basic syntax of the language is based on C
+1. The basic syntax of the language is based on C
   * Multiple pass system
   * First pass is the macro-language
     * Unlike the 'CPP' macro language, this should be more like the common-lisp macro-language
   * Second pass is to resolve/load the modules
   * Third pass is actual compilation
-5. Built-in types
+1. Built-in types
   ( These all derive from 'Object', which contains some special functionality )
   * Boolean
   * Number  (represents classic Integers and Floats)
@@ -59,7 +59,7 @@ I am not claiming to have all the answers. Large parts of this specification wil
   * String
   * Regular Expression (these are fully a part of the language, similar to how they are in Perl)
   * Function (functions are objects, sort-of)
-6. Further thoughts:
+1. Further thoughts:
   * Reflection
     * Java is a good example to follow for a lot of this, as it is decently well defined, if not well designed or documented
   * Runtime patching
