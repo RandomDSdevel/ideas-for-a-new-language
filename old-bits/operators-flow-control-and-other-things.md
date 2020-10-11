@@ -112,26 +112,26 @@ At its most basic, every program is a series of instructions. This is why the ol
 * Conditional Execution
   * The following are proposed ideas
     1. 'cond' operator - similar to Lisp.
-      * takes a group/list of pairs of structures as input, uses one part of the pairs to decide if the other part of the pair should be executed. Basically... give it a comparison and a block, if the comparison is true, the block is executed. Note that all comparisons are done and all blocks where the comparison is true will run.
-	  * If a method to early-end the testing is provided this could be used as part of a basis to provide the more well known if-then-else setup, similar to how Common Lisp has done it.
-	2. 'if/then/else' - similar to most existing languages
-	  * Works like the 'if statement' in C/C++/Java. Only does the tests until it finds the first one that returns a truth value, then executes the matching block of code.
-  * Alternation
-    * Basically... the 'switch - case' setup. 
-	  * _Differentiation_: provided that comparisons are generated based on results of a function built into 'Object', it would be possible to have a 'switch - case' that is not restricted to integers and/or primitive types, but cover the entire breadth of the type system.
+       * takes a group/list of pairs of structures as input, uses one part of the pairs to decide if the other part of the pair should be executed. Basically... give it a comparison and a block, if the comparison is true, the block is executed. Note that all comparisons are done and all blocks where the comparison is true will run.
+         * If a method to early-end the testing is provided this could be used as part of a basis to provide the more well known if-then-else setup, similar to how Common Lisp has done it.
+    1. 'if/then/else' - similar to most existing languages
+       * Works like the 'if statement' in C/C++/Java. Only does the tests until it finds the first one that returns a truth value, then executes the matching block of code.
+* Alternation
+  * Basically... the 'switch - case' setup. 
+    * _Differentiation_: provided that comparisons are generated based on results of a function built into 'Object', it would be possible to have a 'switch - case' that is not restricted to integers and/or primitive types, but cover the entire breadth of the type system.
 * Loops
   * Most languages provide several different forms of looping constructs with different semantics. For instance, in C a do-while loop always executes at least once, but a while-loop does not. What follows is a proposal for a generalized loop construct that could be used to construct all other forms of loops - and also a proposal for a classical "loop zoo".
     1. Generalized 'loop' keyword:
-	  * Given a test that returns a boolean value and a block of code, execute the code until a boolean truth is returned.
-	  * This provides a generalized basis from which others can construct any required type of looping construct.
-	  * Producing most forms of the looping construct would either require some strange (to most people) language semantics or the macro-processor.
-	2. Loop Zoo:
-	  * Provide the following set of loop constructs:
-	    1. Generalize 'for'
-		2. 'foreach'
-		3. 'for ... in' specialized version of the Generalized for-loop
-		4. while
-		5. do...while  (with C-like semantics)
+       * Given a test that returns a boolean value and a block of code, execute the code until a boolean truth is returned.
+       * This provides a generalized basis from which others can construct any required type of looping construct.
+       * Producing most forms of the looping construct would either require some strange (to most people) language semantics or the macro-processor.
+    1. Loop Zoo:
+       * Provide the following set of loop constructs:
+         1. Generalize 'for'
+         1. 'foreach'
+         1. 'for ... in' specialized version of the Generalized for-loop
+         1. while
+         1. do...while  (with C-like semantics)
 * Functions
   * Any modern language is goung to be built around functions/subroutines to allow for maximum code re-use and to better match how modern processors are built.
   * In general a function is a name associated with a block of code and, possibly, a few variables that reference the current stack-frame. (ie: its parameters). Because of some features that are proposed (well, pretty much required, actually) it is easily possible to make all functions a first-class member of the language and provide for them to be manipulated as if they were no different from any variable.
