@@ -1,4 +1,4 @@
-#On the parsing of the language
+# On the parsing of the language
 
 In the general overview, it is noted that the language should/will be a lot like C. In matters of punctuation, syntactic sugar, some keywords and formatting, this is correct. However, the language is also different enough to require a slightly different and somewhat cruder method of parsing.
 
@@ -20,7 +20,7 @@ Parsing steps:
   * Operator
   : The words should parse to an expression that makes some sort of syntactic/lexical sense. This gets stored in the AST and any updates to the symbol table for the current lexical scope needs to get made.
 
-#Notes
+# Notes
 
 1. What is above is a very general overview of the process. Quite a bit needs happen behind the scenes to cover the various language features working correctly. In essence the "everything is an expression" bit is the truth, but a lie at the same time. By making it so that there is no difference between a "statement" and an "expression" in the language quite a bit of orthagonality is added, but at the same time some complexity is added in the parser as more data has to be tracked so that the actual value returned from "statement-like expressions" can be handled in a uniform and documented manner.
 
