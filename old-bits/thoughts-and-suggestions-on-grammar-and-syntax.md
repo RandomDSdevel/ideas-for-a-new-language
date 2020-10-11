@@ -1,6 +1,7 @@
 # Random Thoughts
 
 ## On Types
+
 Many problems arise in my thoughts because I really like languages with type inference or a system such as duck-typing, where as long as the type implements the interface, it can be used in a given place. The problems arise because a proper object-oriented language should have stronger typing than that as part of combatting some of the more common sources of errors. To that end, unless the type result is explicitely clear, a type name must be given when declaring a variable. Another possible exception would be to declare the result to have a type specified that is an incomplete type - in this case, an interface that whatever object is to be stored in the variable must implement.
 
 This is not as big a hurdle for the programmer as it might sound - with the memory and computing power available 10 years ago, a clear idea of the type of value being stored in a variable would have been easy for a computer to infer. With todays technology, it would be even faster and easier. All that means is that the compiler will not know what amount of memory to allocate for a variable until its first use. As for the other part of it - using an interface as a type specification - Java does something very similar already, so this is not a new idea.
@@ -8,6 +9,7 @@ This is not as big a hurdle for the programmer as it might sound - with the memo
 In the end it seems that most of the types specified in [Types and Collections](ideas-for-a-new-language/types-and-collections.md) would be better specified as both an interface specification and a type - or even that all types are just interface specifications.
 
 ## Thoughts on Syntax for Inherent Multi-processing
+
 In its most basic form multi-processing is just a way of splitting up a job into a number of smaller pieces that the computer can then switch between rapidly, doing them all at once and completing all the tasks that much faster, with only a penalty for having to switch between them. On a modern computer you will find, usually, at least two wholly independent processing cores and some of them allow for interleaving faster instructions with slower ones - what Intel calls Hyperthreading - to double the number of cores present.
 
 In all current programming languages the task of deciding how the various tasks get split up is left to the programmer, as is the task of co-ordinating between those tasks and making sure that they don't improperly interfere with each other. The number of different issues and specific names for bugs that arise from the languages forcing that difficult task on the programmer show just how hard it can really be. To this end, I've been thinking about how a language could be designed so that the compiler actually building the executable could decide the division of tasks by itself, putting the difficult task and the tracking of all the potential issues on a machine that is, almost literally, built for doing things like that.
@@ -18,8 +20,9 @@ Not that a modification of that idea is not work thinking about. In [Go](http://
 
 Now... it might be that, without some form of Artificial Intelligence, such a decision must always rest on the programmer. As such, I think the language might do well with a keyword or some other form of marking such that the compiler has a hint that "this block can be run in a separate thread". Though I'd prefer to see some sort of heuristics so the compiler doesn't just blindly use that to create a thread for them all, but actually tries to meet some heuristic to decide if it actually needs to or not for performance, or memory use or whatever.
 
-##Thoughts on Language Grammar
-###Defined Token Types
+## Thoughts on Language Grammar
+### Defined Token Types
+
 * Operator   (see [Operators, Flow Control and Other Things](ideas-for-a-new-language/operators-flow-control-and-other-things.md))
 * Identifier (variable names, function names, etc... Almost all languages have these)
 * Keyword    (well, perhaps not - as what items would be keywords in other languages could be represented differently, but, for now...)
@@ -28,7 +31,8 @@ Now... it might be that, without some form of Artificial Intelligence, such a de
 
 That's right, five types of token that cover the entire spread of things the tokenizer will be sending to the parser. Yes, there are something like 20 types of operators just for Math, Comparison, Assignment and Binary combination/manipulation - but they all fit into one category of item. The final category - that of "Sugar" will probably see the least use in any program, as its contents are, generally, not meant to be used every line. (yes, the EOL marker is, but...)
 
-###Structure
+### Structure
+
 As noted elsewhere, the language should be structured so that every piece of it is actually an expression. Every function call, loop, conditional... it all returns a value of some sort. In most cases this value will be ignored completely and possibly even elided from the binary as a general step that happens even if no optimization is requested. However, this does allow for some structuring that people would find odd.
 
 What follows is a few examples, in a style reminiscent of C that I will define later as a proposal for the actual syntax and grammar of the language.
@@ -59,10 +63,12 @@ Yes, the above example is the most basic example any language could have.
 ```
 In the above example is a demonstration of exactly what "everything is an expression" actually means. The result of the 'for' loops run is put into a variable.
 
-####Notes
+#### Notes
+
 What the actual result of a loop - or any other structure that does not return a value in classical languages - actually is has not been decided and is still an open question, so take the assignment of it to an Integer with a rather large grain of salt.
 
-###Proposed Grammar and Syntax
+### Proposed Grammar and Syntax
+
 This proposal is both simple and complex. From the above examples the general format of the proposed language can be seen - it is vaguely Java or C#-like with ideas for the format of function definition lifted from other languages. Of course... the "Object" keyword there could be exchanged for "class", but the definition of the function is done in that manner because it will allow for functions to return multiple values.
 
 I have had other thoughts about function definitions, however, because of how complex they can get in some other languages. One of those thoughts is to have a pre-amble block that defines the inputs and outputs of a function, in depth - allowing for almost full use of the language in defining a functions parameters and return values. This was not included in the above example because I have not been able to figure out a way to do this in an easily understandable way.
@@ -129,10 +135,12 @@ Yep... 13 (okay, 17) keywords - although I'd call the three of the loop construc
 
 And yes... I have also not, yet, had any real ideas on how to handle lambda functions, anonymous functions, closures, generators and a number of other things.
   
-####Notes
+#### Notes
+
 Because I see terseness as saving a programmer time, I'd prefer there to be a short form for the import statement, but because of some difficulties of making this truly useful, such a short form cannot exist. This specifaction calls for modules to only modify their own namespace(s) and not the namespace of the user, so the 'AS' part, which gives the pulled in module a name, is required. The 'FROM' clause is also required because names are not unique and two different modules could have namespaces, internally, that are identical. (not that this should ever occur, just that it is possible and not against anything in this specification)
 
-###Lambda Functions and Other Specialized Bits
+### Lambda Functions and Other Specialized Bits
+
 While it is true I have not given much thought to how to represent lambda-functions, anonymous functions, closures or generators in this language, I do have some ideas that I've been working on that cover them.
 
 For anonymous functions I've thought that it might be possible to have the 'function' keyword, when used without a name, generate a random name, internally, and return a "function pointer" that can then be assigned to a variable that would act as the functions name. This would make it very similar in function to Javascript - and this is one of the things I think Javascript gets right.
@@ -143,7 +151,8 @@ When it comes to generators I only have my limited exposure to them - and use of
 
 As to closures... I have no real experience with them and hence, have no opinion one way or the other as to what the best method of adding them to a language might be.
 
-####Notes
+#### Notes
+
 For reference, the "big arrow" notation is (the following is (hopefully valid) ES6):
   ```javascript
   let add10 = (a) => a + 10;
@@ -162,7 +171,8 @@ My thoughts for lambda's and anonymous functions in this language would be:
   
 Note that they are both of type 'Function' and the differences are in the use of type-names and in the addition of the defined type being returned. The above example is nice, readable (once you grok the "big arrow" setup) and has a format that should be understandable and recognizable by a large number of programmers.
 
-###Interfaces and Implementations
+### Interfaces and Implementations
+
 The compiler can and probably should be able to extract an "interface declaration" from any given compilation unit. This is, sadly, something that is necessary as we do not have the information available that byte-code compiled languages such as Java and the .NET family do. What this provides is a way of keeping the code modular and structured as well as providing the compiler the information it needs to do its job. (and by extracting the interface from the compilation units implementation, it can solve a host of errors)
 
 The programmer should, however, compare the resulting interface to whatever specification is available - s/he may have made an error in writing the "implementation" and it is now different from what the specification calls for. Yes, this can be caught in automated testing, but it always pays for the programmer to review his/her work before pushing it off to the repository for the unit-tests and regression-tests to be run.
@@ -173,7 +183,8 @@ So it seems that there is a need for another term - what to call these two relat
 
 As to the other term that makes up this sections name? Every "compilation unit" is, since it contains all the code that isn't defined in a module, an Implementation. Simple as that.
 
-###Exceptions and Error Handling
+### Exceptions and Error Handling
+
 During the era when computers were first coming into use and the base drives behind of our modern languages were being laid out and formulated, the machines had limited computing power and limited memory. These days even processors embedded in a microwave or other appliance can easily out-do the processing power of those early computers - and can usually beat them on the amount of available memory as well. But those restrictions led to languages that encoded errors as special returned values and, sometimes, used a separate global variable and a return value with special meaning.
 
 The modern solution - a complete exception system - would not have worked for them because of it adding extra code and memory requirements for keeping track of things properly. However... in any newly designed language an exception system for error handling should be included. Had one existed in Algol - or the concept itself existed in a widespread manner at all at the time - Unix would not have its "panic()" and Multics programmers would not have had to spend as much time writing code to recover from all possible error conditions.
@@ -182,7 +193,8 @@ To that end, I'd like to propose this language include an exception handling sys
 
 As it stands the classic "try/catch" syntax - or possibly the "try/catch/finally" of Java and some other languages - seems like it would be a good choice for this feature. Alongside this, I'd like to suggest the exception handling mechanism be one of the few parts of the language that is not, technically, an expression. As with some other structures, it doesn't seem likely that someone would want to put an entire exception-handling mechanism into the middle of an expression - even though I can see some people trying to do exactly that.
 
-###Destructuring, Multiple Returns and List Comprehensions
+### Destructuring, Multiple Returns and List Comprehensions
+
 I first ran into the idea of Destructuring in Perl, though I never realized what it was or that it was anything special at the time - to me it was just a way to assign a set of values from a list in less space than the same would have taken me in, say, C. Later I ran into it in Python, again not knowing that it had a name, but I realized how special the idea was, since swapping the values of two variables was as simple as "[a,b] = [b,a]". As I grew as a programmer I came to wish that other languages included this feature, as it made some algorithms that much easier to write. Hence, with this language, I'm proposing that Destructuring be included as a generalization of the proposed base feature of multiple return values. My proposed syntax for this matches, to a degree, the syntax used in Python:
 
 ```
@@ -246,10 +258,12 @@ Object example_of_list_comprehension {
 
 That demonstrates all the forms of list comprehension - as 'map', 'reduce' and 'filter' should be default member functions of any "Iterable", as all Iterables are Lists. 
 
-####Notes
+#### Notes
+
 The string constant given to the 'formatted output' function show my long history and familiarity with C. The actual proposal for formatted output strings will not look like that. The actual "insert item here" marker will likely take after how they look in C#, as one of the functions that Object will implement a "sane default" for is the "toString()" member function used above. In this manner there will be no need to encode a type in the specifier, as all Objects will have a method that converts them to a String that can then be simply interpolated into the output.
 
-###Closing Thoughts
+### Closing Thoughts
+
 The syntax and grammar proposed above are lacking in several specifics that I have been unable to decide on and do not have any proper idea of how they could be safely and properly implemented. These include marking blocks for automatic multi-processing, ternary operators and Perl-like postfix operations. It is also missing anything on Inheritance and sub-type annotation, as I do not, yet, have a clear idea of how to implement such or how to solve problems such as can occur with direct multiple inheritance. I will attempt to cover such in another document.
 
 As I have said quite a bit recently, comment, critique and discussion are welcomed!
