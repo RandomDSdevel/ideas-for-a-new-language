@@ -10,21 +10,21 @@ For the widest degree of genericity and utility the following base types are spe
 	* Can be integer, fixed-point, floating point, rational, irrational or complex
 	* The underlying storage format shall support seemless conversion between floating-point, fixed-point and integer values
 	* The multi-precision value shall have limits of capacity no less than a 64-bit integer or an IEEE 754 "binary64" (double precision) floating point value.
-  2. Boolean
+  1. Boolean
     * Stores a single value - either True or False - in an implementation defined format
-  3. Glyph
+  1. Glyph
     * Represents a single "character" of text input
 	* Shall be able to store any Unicode character - ideally the encoding would not matter, but because leaving too much to the implementation causes problems with program portability, UTF-8 is selected as the internal format, as it conserves space and has a direct mapping to the encoding still hard-wired into most computers - ASCII.
 	* Technically this should be called a "character" or "code-point", as the glyph is the visual representation of the symbol, but something that would uniquely identify this as not being the classical "can be simply cast to an integer and is the smallest addressable size of storage" that C and other languages use "char" or "character" for was wanted - and "glyph" is much more unique (and more terse) than "code-point".
-  4. String
+  1. String
     * Owing to brevity of storage and how computers work, a string is, classically, an array of a languages "character" type, with some form of special delimiter markings its end if the language doesn't otherwise have a manner of specifying the length or a requirement that all arrays be specified with some maximum length.
 	* In more modern languages a String is a class/object/type that has storage for the component "characters" and any number of utility member functions for examining the string, extracting sub-strings, comparing the string to other strings and even changing the contents of the string. This is how the String type of this language works. It stores any number of Glyphs (limited only by storage and the representational ability of the underlying 'Number' type) and provides all the types of functionality mentioned.
-  5. Regular Expression
+  1. Regular Expression
     * Intimately tied to the String type, this stands alone because the complexity of the "Deterministic Finite Automata" that makes up a regular expression engine requires it.
 	* Also... by having it as a built-in type a regular expression can be inserted directly into the program text as-is without any of the requirements for it to be represented as a string and passed through a complex set of processing steps. (Basically... you can use regular expressions in this language as freely as you can use them in Perl)
 	* The actual regular expression engine to be used is left to the implementation, but shall not have any less functionality than engine provided by the "Perl Compatible Regular Expression" (PCRE) library, "PCRE2 version 10.22". This requirement is to provide a stable, minimum set of features to be available across the board and also to provide a proven working regular expression engine that can be used as a source of provably correct solutions that can be input into a test system testing the any given implementation of this languages regular expression system.
 	  * __NOTE__: Factually the specification of that specific version and engine is used as some languages (most notably, JavaScript/ECMAScript) that specify a regular expression system have one specified that is anemic and of only minimal utility when the solution at hand calls for heavy use of regular expressions.
-  6. Function
+  1. Function
     * For the generic utility of such, rather than having a "pointer" - inclusion of which, in this language, is still undecided - as the generic handle for passing around references to a function, there is a specific 'Function' type.
 	* This type acts as both a handle that can be used to indirectly call a function, but also as the base type of a closure and lambda/anonymous function.
 	* Is also a part of the reflection system and contains information about the function, its parent object, source-file, source-line, etc...
