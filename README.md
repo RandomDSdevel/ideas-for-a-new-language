@@ -74,5 +74,4 @@ I am not claiming to have all the answers. Large parts of this specification wil
    * Multi-process...
      * No firm ideas here, but should probably include some base concepts as well as implementations for multiple processes, multiple threads, co-routines and async workers.
        * The base facilities should be generic enough that offloading onto a cloud processing system or a GPU should be relatively easy to implement.
-	
-	
+
