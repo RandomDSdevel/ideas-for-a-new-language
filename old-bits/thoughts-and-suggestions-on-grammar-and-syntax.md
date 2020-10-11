@@ -85,51 +85,51 @@ To that end, I would like to propose the following list of keywords/built-in roo
   * classic, iterative for-loop
   * could use the classic C-style format or find a different method of specifying things
   * returned value is not yet fixed - top idea is to collect the result of the final expression of each iteration into an array while another is to return the terminal value held in the variable used for the iteration - the former is preferred, as the final form of this is not yet fixed and if it follows the C convention, there could be multiple variables being allocated and modified as part of the iteration
-2. foreach
+1. foreach
   * for iterating over arrays and other iterable containers
   * simple semantics, give it a variable to bind the current item to and the iterable to loop through
   * return value for this is not yet fixed - although having this work exactly like the baseline 'for' would be nicely orthogonal, it might be better to return the number of items iterated instead
-3. while
+1. while
   * while loops can be optimized quite a bit - in fact, in some functional languages the type of code a C compiler might generate for a while loop is actually what is generated for a call to map() across a function.
   * only executes if and when the expression it evaluates prior to each run is true
   * return value not yet fixed - no real ideas on what it could be, although it might be good to have this work like the top proposal for the 'for' loop. (ie: collect the value of the last statement of the block per iteration)
-4. do...while
+1. do...while
   * a variant of the while loop that will always run at least once, whether or not the condition expression is true.
   * this is a trick used in quite a bit of C code in systems-level and bare-metal programming
   * return value not yet fixed - as this is actually a variant of the while-loop, it should have the same return value semantics
-5. if...else
+1. if...else
   * as in C and related languages we elide the 'then' part of the construct.
   * The actual setup should be "if <condition> <code-block> else <code-block>" - where a code-block can be another "if", if needed.
   * return value not yet fixed - once more, there are no ideas yet as to what to have this return
-6. switch-case
+1. switch-case
   * fast alternation through available options with, possibly, the same fall-through semantics as C. Even though said semantics can be a source of errors, it makes for a method of writing compact code without a lot of duplication.
   * Perl lacks (or lacked) this construct - it shows in the if/elsif trees and the fact that CPAN has a module to add it to the language
   * return value not yet fixed - the only real idea for this is to return the result of the last expression prior to encountering a 'break' or the end of the structure.
   * 'case' and 'default' - if these are decided as something to include (rather than, say, doing things similar to the bourne-shell, where the 'case' looks like: '1|2|3)' and 'default' looks like: '*)') they are two things that are not, technically, expressions are are not usable in an expression.
-7. break
+1. break
   * end the execution of the current block here, unless we are at the top-level of a function.
   * semantic nit: should have no effect inside an if-else and when encountered there, even if in a code-block, should act upon the next highest level that is not an if-else. This is to allow it to end a loop that was started as an "infinite loop" effectively, though there is no good reason to not have an end-condition on a loop.
   * Does not return a value - this is one of the few instances (along with a couple other pieces of syntactic sugar) where something is, technically, not an expression.
-8. const
+1. const
   * syntactic sugar - defines a variable as having a constant value
   * as with 'case', 'default' and 'break' is unusable as part of most expressions - it can, however, be used as part of an expression where a type-cast is in use.
-9. var
+1. var
   * basically what modern C++ calls 'auto' - basically matches most of what it is used for in 'swift'
   * is used to tell the compiler that the type of data being assigned should be inferred from the variables first use where such an inference can be safely made.
   * another piece of syntactic sugar - as with 'case', 'default' and 'break' (and unlike 'const') this cannot be used anywhere but at a variables declaration.
-10. function
+1. function
   * tells the compiler that what follows is a function definition
   * once more, just syntactic sugar and is only used when defining a function
-11. separable (threadable?)
+1. separable (threadable?)
   * name/terminology is debatable
   * used to flag a block of code as being capable of executing in parallel with the rest of the process.
   * return value is whatever the return value for that block might be.
   * can be used with looping constructs and control structures.
   * when used with an if-else, all subordinate if-else's that might be chained onto the originally flagged one also carry the flag
-12. import-from-as
+1. import-from-as
   * used to pull in external modules/module definitions and provide them with a name in the namespace of the current compilation unit
   * this is, against the language specification, a statement - it cannot occur anywhere inside any code-structure as it is a meta-feature and not a part of the language meant for (or legal for) direct use inside code.
-13. return
+1. return
   * exit the current function and set its value to the result of the expression that follows.
   * its "return value" is the value of the expression, though I can't see any way in which a keyword/expression that actually *halts* the current codes execution could be a useful part of another expression.
   
