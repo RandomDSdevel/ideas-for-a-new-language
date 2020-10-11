@@ -36,19 +36,19 @@ The six above types - truthfully just 3 of them - can be used to represent somet
 
 That is where the "sub-type" specialization system comes into play. A sub-type is a type that shares most features with its parent type, but specializes off of them, either in restricting the range of values or by defining a specific storage format. These base sub-types are all of Number and they are:
 
-  1. Integer
+ 1. Integer
     * A sub-type of Number that stores only integers - no rational, complex, floating-point or fixed-point numbers.
-  1. Float
+ 1. Float
     * Similar to Integer, but strictly stores floating-point numbers
-  1. Fixed
+ 1. Fixed
     * Same as the other two, but solely fixed-point
-  1. Real
+ 1. Real
     * A "real number" represents a quantity along a line - can be of any type except fixed-point or complex.
-  1. Rational
+ 1. Rational
     * Any number that can be expressed as the quotient or fraction 'p/q' where p and q are two integers and q is non-zero. This is basically a sub-set of Real that excludes irrational numbers.
-  1. Complex
+ 1. Complex
     * A complex number is any number that can be expressed as 'a + bi' where 'a' and 'b' are real numbers and 'i' represents the imaginary unit (i*i == -1)
-  1. Irrational
+ 1. Irrational
     * Any real number that cannot be expressed as a ratio of two integers. This includes values such as PI and the square root of 2
 	
 Of those seven sub-types, only the first two are required in any generic programming language - and only those two (Integer and Float) are actually suggested as hard-requirements for this language. The other five - including 'Real' and 'Complex' (which are mentioned in the [Readme](ideas-for-a-new-language/README.md)) - are there for illustrative purposes, completeness and because they are useful in several fields of computer science.
