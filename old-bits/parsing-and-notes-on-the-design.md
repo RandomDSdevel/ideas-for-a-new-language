@@ -11,8 +11,8 @@ Parsing steps:
      * Is it a block opening character ( a curly-brace, currently ) - if so, we need to recurse the parse to handle this. The reason being that the block represents a single "value" to the top-level of the parsing. Each "block" is a separate syntactic construct with its own lexical scope for variables and other features.
        * Is it a double-quote? Parse the double-quoted value out - this is a string and needs to be handled as such
        * Is it a semi-colon? If yes, then we've reached the end of the input for the current expression.
-2. Split that line at spaces/punctuation into "words" - these words may be simple or complex
-3. Each "word" is one of the following:
+1. Split that line at spaces/punctuation into "words" - these words may be simple or complex
+1. Each "word" is one of the following:
 
    * Keyword
    * Identifier
@@ -32,6 +32,6 @@ Parsing steps:
 
    As far as returning values from a function, I am quite partial to the "return" keyword, which can easily be extended to cover almost any situation imaginable - including multiple values to return.
 
-2. With some work it might be possible to elide some syntactic sugar in certain contexts. Perl does this decently well and it allows for some specialization of the language into a domain-specific one by which modules are in use. Though the requirement that modules do not/cannot modify the root namespace themselves makes this more difficult...
+1. With some work it might be possible to elide some syntactic sugar in certain contexts. Perl does this decently well and it allows for some specialization of the language into a domain-specific one by which modules are in use. Though the requirement that modules do not/cannot modify the root namespace themselves makes this more difficult...
 
-3. Generic operator overloading - such as some have requested for other languages - might not be a good idea. The system in Python - whereby each operator actually calls a specifically named function in the class - or even a system with some syntactic sugar to make it like C++ would be better. However... there are arguments against allowing general operator overloading for the simple reason that some have classically mis-used it (such as the changes of the shift operator in C++ to work for I/O). This is something that requires much thought and some discussion with people more knowledgable on the topic than I am.
+1. Generic operator overloading - such as some have requested for other languages - might not be a good idea. The system in Python - whereby each operator actually calls a specifically named function in the class - or even a system with some syntactic sugar to make it like C++ would be better. However... there are arguments against allowing general operator overloading for the simple reason that some have classically mis-used it (such as the changes of the shift operator in C++ to work for I/O). This is something that requires much thought and some discussion with people more knowledgable on the topic than I am.
