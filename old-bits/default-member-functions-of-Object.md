@@ -1,8 +1,9 @@
-##On 'Object'
-###Overview
+## On 'Object'
+### Overview
+
 'Object' is the base class from which all other ovjects in the language derive. It is always there, with no need for declaring the inheritance. This exists as more of a conceptual feature - 'Object' itself is not used in the language directly for anything. It acts, instead, as a place to collect "safe and sane defaults" for some features of the language. These features are included for a variety of reasons - said reasons will be discussed in later parts of this document.
 
-###Currently Known/Required Features
+### Currently Known/Required Features
 
 1. dot-operator (aka: address lookup and "does this object have this name as a member ?")
   * The dot-operator is used to access members of an object - that lookup can actually pass through an overridden function at some point, so we provide a default implementation that the compiler is free to completely elide and optimize to a direct address use.
@@ -33,7 +34,7 @@
   
 Yep - four required features that are definitively part of 'Object'. Three of these make up core parts of the language and help with its flexibility.
 
-###Proposed Features
+### Proposed Features
 
 1. Comparison Operators
   * A set of sane defaults for the equality and inequality operators are a definite requirement.
@@ -45,5 +46,6 @@ Yep - four required features that are definitively part of 'Object'. Three of th
 
 These two features actually make up over 20 separate functions. But without these, one of the potential methods of handling operator overloading disappears. (and it is the method that I would prefer, as it keeps the language fully orthoganol - everything has the same sort of execution path)
 
-###Notes
+### Notes
+
 This acts more like an inherent interface that all Objects possess and can provide their own implementations for. It is defined as a base for everything so that there is no need to worry if something actually implements a feature - if the feature is a key part of the language or important enough that it should be implemented across the board, it will be added here.
