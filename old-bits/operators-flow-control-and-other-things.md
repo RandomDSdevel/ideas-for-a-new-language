@@ -9,40 +9,40 @@ This leads to the following set of proposed operators - 28 in total, grouped int
 1. Math Operators
    1. Classic Arithmetic Operators
       1. Addition:             +
-	  2. Subtraction:          -
-	  3. Multiplication:       *
-	  4. Division:             /
-	  5. Modulo:               %
-   2. Bitwise/Binary Operators
+      1. Subtraction:          -
+      1. Multiplication:       *
+      1. Division:             /
+      1. Modulo:               %
+   1. Bitwise/Binary Operators
       1. AND:                  &
-	  2. OR:                   |
-	  3. NOT:                  !
-	  4. XOR:                  ~
-      5. Shift Left:           <<
-      6. Shift Right:          >>
-      7. Roll Left:            <<<
-      8. Roll Right:           >>>
-2. Boolean/Comparison Operators
+      1. OR:                   |
+      1. NOT:                  !
+      1. XOR:                  ~
+      1. Shift Left:           <<
+      1. Shift Right:          >>
+      1. Roll Left:            <<<
+      1. Roll Right:           >>>
+1. Boolean/Comparison Operators
    1. Basic Operators
       1. Equality:             =
-      2. Less Than:            <
-	  3. Greater Than:         >
-	  4. Inequality:           !=
-   2. Extended/Compound
+      1. Less Than:            <
+      1. Greater Than:         >
+      1. Inequality:           !=
+   1. Extended/Compound
       1. Less-Than-Or-Equal:   <=
-	  2. Greater-Than-Equal:   >=
-	  3. Identity/Identical:   ==
-   3. Combining/Alternation/Other
+      1. Greater-Than-Equal:   >=
+      1. Identity/Identical:   ==
+   1. Combining/Alternation/Other
       1. AND:                  &&
-	  2. OR:                   ||
-	  3. NOT:                  !	  
-3. Special Operators
+      1. OR:                   ||
+      1. NOT:                  !	  
+1. Special Operators
    1. Associate:               <->
-   2. Apply:                   ->
-4. Non-Operator "linguistic operators"
+   1. Apply:                   ->
+1. Non-Operator "linguistic operators"
    1. Ternary:                 <expression>?<value if true>:<value if false>
-   2. Shortcut Ternary:        <expression>?:<value if false>
-   3. Range:                   <value>..<value>
+   1. Shortcut Ternary:        <expression>?:<value if false>
+   1. Range:                   <value>..<value>
 
 ### Original Thoughts/Design follows
 ### Basics of any programming language
