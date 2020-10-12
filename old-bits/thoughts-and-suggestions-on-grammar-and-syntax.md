@@ -52,17 +52,17 @@ What follows is a few examples, in a style reminiscent of C that I will define l
 
 Yes, the above example is the most basic example any language could have.
 
-```
+  ```
   Object example_of_expressions {
-	function main() :: Integer
-	  {
-	     Integer A;
-		 
-		 A := for( var i = 0; i < 10; i++ ) { /* do nothing */ };
-		 return A;
-	  }
+    function main() :: Integer
+      {
+        Integer A;
+        A := for( var i = 0; i < 10; i++ ) { /* do nothing */ };
+        return A;
+      }
   }
-```
+  ```
+
 In the above example is a demonstration of exactly what "everything is an expression" actually means. The result of the 'for' loops run is put into a variable.
 
 #### Notes
