@@ -43,13 +43,15 @@ What follows is a few examples, in a style reminiscent of C that I will define l
   
   Object example_hello_world {
     function main() :: Integer
-	{
-		Out.writeln( "Hello World!" );
-		return SUCCESS;
-	}
+      {
+        Out.writeln( "Hello World!" );
+        return SUCCESS;
+      }
   }
   ```
+
 Yes, the above example is the most basic example any language could have.
+
 ```
   Object example_of_expressions {
 	function main() :: Integer
