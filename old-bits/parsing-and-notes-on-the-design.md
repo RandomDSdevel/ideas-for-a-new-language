@@ -13,12 +13,14 @@ Parsing steps:
        * Is it a semi-colon? If yes, then we've reached the end of the input for the current expression.
 2. Split that line at spaces/punctuation into "words" - these words may be simple or complex
 3. Each "word" is one of the following:
+
    * Keyword
    * Identifier
    * Constant
    * Syntactic Sugar
    * Operator
-   : The words should parse to an expression that makes some sort of syntactic/lexical sense. This gets stored in the AST and any updates to the symbol table for the current lexical scope needs to get made.
+
+   The words should parse to an expression that makes some sort of syntactic/lexical sense. This gets stored in the AST and any updates to the symbol table for the current lexical scope needs to get made.
 
 # Notes
 
