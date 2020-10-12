@@ -23,11 +23,11 @@ Now... it might be that, without some form of Artificial Intelligence, such a de
 ## Thoughts on Language Grammar
 ### Defined Token Types
 
-* Operator   (see [Operators, Flow Control and Other Things](ideas-for-a-new-language/operators-flow-control-and-other-things.md))
+* Operator (see [Operators, Flow Control and Other Things](ideas-for-a-new-language/operators-flow-control-and-other-things.md))
 * Identifier (variable names, function names, etc... Almost all languages have these)
-* Keyword    (well, perhaps not - as what items would be keywords in other languages could be represented differently, but, for now...)
-* Constant   (any item that is not part of the macro-language or core language and is meant to be included directly in the output in some form)
-* Sugar      (any token which exists for a specific purpose, but does not fit the other categories - this does include things that are normally considered "syntactic sugar" - it also covers the comma used to separate items in a list, the end-of-line marker, whatever is chosen to mark separate blocks if paired keywords are not chosen, etc...)
+* Keyword (well, perhaps not - as what items would be keywords in other languages could be represented differently, but, for now...)
+* Constant (any item that is not part of the macro-language or core language and is meant to be included directly in the output in some form)
+* Sugar (any token which exists for a specific purpose, but does not fit the other categories - this does include things that are normally considered "syntactic sugar" - it also covers the comma used to separate items in a list, the end-of-line marker, whatever is chosen to mark separate blocks if paired keywords are not chosen, etc...)
 
 That's right, five types of token that cover the entire spread of things the tokenizer will be sending to the parser. Yes, there are something like 20 types of operators just for Math, Comparison, Assignment and Binary combination/manipulation - but they all fit into one category of item. The final category - that of "Sugar" will probably see the least use in any program, as its contents are, generally, not meant to be used every line. (yes, the EOL marker is, but...)
 
