@@ -162,6 +162,7 @@ For reference, the "big arrow" notation is (the following is&thinsp;—&thinsp;h
   ```
   
 And the same as the lambda example above, as an anonymous function:
+
   ```javascript
   var fun = function(a) { return a+10 };
   ```
