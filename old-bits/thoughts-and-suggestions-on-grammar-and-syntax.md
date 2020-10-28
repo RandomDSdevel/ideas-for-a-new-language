@@ -167,7 +167,7 @@ And the same as the lambda example above, as an anonymous function:
   var fun = function(a) { return a+10 };
   ```
   
-My thoughts for lambda's and anonymous functions in this language would be:
+My thoughts for lambdas and anonymous functions in this language would be:
 
   ```
   Function add10 = (Number a):Number => a + 10;
