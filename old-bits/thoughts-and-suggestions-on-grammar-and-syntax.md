@@ -155,7 +155,7 @@ As to closures... I have no real experience with them and hence, have no opinion
 
 #### Notes
 
-For reference, the "big arrow" notation is (the following is (hopefully valid) ES6):
+For reference, the "big arrow" notation is (the following is&thinsp;—&thinsp;hopefully valid&thinsp;—&thinsp;ES6):
 
   ```javascript
   let add10 = (a) => a + 10;
