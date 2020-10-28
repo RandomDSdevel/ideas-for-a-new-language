@@ -215,17 +215,17 @@ import constants.ExecutionSuccess from OS as SUCCESS;
 
 Object example_of_multi_return {
   function returns_multiple() : [Number] {
-	return [0, 1, 2, 3, 3.14159, 4, 5, 6, 6.28318];
+    return [0, 1, 2, 3, 3.14159, 4, 5, 6, 6.28318];
   }
   
   function main() : Integer {
     Number z,y,x,w,v,u,t,s,r;
-	[z,y,x,w,v,u,t,s,r] := returns_multiple();
+    [z,y,x,w,v,u,t,s,r] := returns_multiple();
 	
     foreach( Number a : returns_multiple() ) {
-		Out.writeln( a.toString() );
-	}
-	return SUCCESS;
+      Out.writeln( a.toString() );
+    }
+    return SUCCESS;
   }
 }
 ```
