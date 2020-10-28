@@ -243,20 +243,20 @@ import constants.ExecutionSuccess from OS as SUCCESS;
 Object example_of_list_comprehension {
   function get_vals() : Number[] {
     Number[] vals = [0, 1, 2, 3, 3.14159, 4, 5, 6, 6.28318];
-	return vals;
+    return vals;
   }
   
   function main() : Integer {
     Number[] vals := get_vals();
-	Integer[] justInts := [for(Number i of vals) if(i.isInteger()) i];
-	Float[] justFloats := [for(Number i of vals) if(i.isFloat()) i];
-	Integer[] evenNumbers := justInts.filter((i) => if(i%2==0) return True);
+    Integer[] justInts := [for(Number i of vals) if(i.isInteger()) i];
+    Float[] justFloats := [for(Number i of vals) if(i.isFloat()) i];
+    Integer[] evenNumbers := justInts.filter((i) => if(i%2==0) return True);
 
-	Out.format( "%i even numbers in %s\n", evenNumbers.length, vals.toString() );
-	Out.format( "%i floating point numbers (%s) in array %s\n", justFloats.length, justFloats.toString(), vals.toString() );
+    Out.format( "%i even numbers in %s\n", evenNumbers.length, vals.toString() );
+    Out.format( "%i floating point numbers (%s) in array %s\n", justFloats.length, justFloats.toString(), vals.toString() );
     Out.format( "%i of %i values in %s are Integers\n", justInts.length, vals.length, vals.toString() );
-	
-	return SUCCESS;
+
+    return SUCCESS;
   }
 }
 ```
