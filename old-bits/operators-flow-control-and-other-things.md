@@ -45,7 +45,7 @@ This leads to the following set of proposed operators - 28 in total, grouped int
    3. Range:                   <value>..<value>
 
 ### Original Thoughts/Design follows
-###Basics of any programming language
+### Basics of any programming language
 1. Math operations
   * At its core a computer does exactly what the name implies - computes. So every language needs a basic set of math operations
     1. Addition
@@ -82,7 +82,7 @@ This leads to the following set of proposed operators - 28 in total, grouped int
   * At this point there is only one other generic, always needed operation - Assignment.
   * A direct, "literally equal" comparison might be handy - this would apply in situations where the type and value are both equal or, potentially, where an object is being compared to itself. (perhaps as part of finding a given object in a linked list or similar)
   
-###Proposed 'operators' mapped to operations named above
+### Proposed 'operators' mapped to operations named above
 1. Addition:       +
 2. Subtraction:    -
 3. Multiplication: *
@@ -105,7 +105,7 @@ This leads to the following set of proposed operators - 28 in total, grouped int
   * These follow the C/C++ standard for operators in everything except for assignment, where the Pascal standard is used. In the case of assignment the Pascal standard is used as a means to help catch a common error seen in numerous C and C++ programs.
   * I'd actually prefer it if classic math operators could be used for all of the given operations that have direct mappings, but this would make writing programs in this language difficult for people using classic keyboards.
 
-###Control Structures
+### Control Structures
 At its most basic, every program is a series of instructions. This is why the oldest class of languages are known as "procedural" - they are sets of instructions grouped into procedures and run in order, as needed. Even the newest functional languages operate this way, although they often contain features to delay the execution of any given set of instructions until absolutely needed and change the most basic construct from the instruction to the function. The choice of which instructions to execute and how many times is controlled by a languages set of "control structures", and as this fits well with most people thought processes we will not be changing that.
 
 * Conditional Execution
@@ -141,5 +141,5 @@ At its most basic, every program is a series of instructions. This is why the ol
   * This idea would also provide, in some manner, for an "eval" function. Though it may not be the best argument in its favor, the fact that it would be treating a block of code as if it was just another piece of data is meaningful. And besides providing some small basis for an 'eval' function, it would also provide a firm basis for lambda functions and things similar to Pythons list-comprehensions.
   * In treating blocks as just chunks of data, it would make runtime binding of functions to names - possibly through use of the reflection system - a lot easier. It would also generalize some things and show that a function is just a variable that has had a block of code associated with the name. This would also allow things like the return value of a function being stored in the same place that a variables data might have been...
 
-###Closing notes
+### Closing notes
 This document is as complete as I can make it at this point and should serve as a starting point for defining the rest of the language. While I have grown partial to the idea of treating each block of code as nothing more than another piece of data, this does not mean it is a good idea or the best way forward.
