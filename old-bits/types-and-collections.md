@@ -1,5 +1,5 @@
-#Built-in Types and Collections
-###Types and Sub-types
+# Built-in Types and Collections
+## Types and Sub-types
 
 By design the most basic type that exists in this specification is the raw "Object" type. It, however, is not a real type - you cannot instantiate a member of type 'Object', as it is not actually a type but a specification of a set of interfaces that all objects must possess and can override as needed.
 
@@ -51,7 +51,7 @@ That is where the "sub-type" specialization system comes into play. A sub-type i
 	
 Of those seven sub-types, only the first two are required in any generic programming language - and only those two (Integer and Float) are actually suggested as hard-requirements for this language. The other five - including 'Real' and 'Complex' (which are mentioned in the [Readme](ideas-for-a-new-language/README.md)) - are there for illustrative purposes, completeness and because they are useful in several fields of computer science.
 
-###Collections
+## Collections
 
 A collection is a classic idea in programming, and a useful one. Historically most languages have had just one collection - the Array. While this is good for a very large selection of use cases, some things are better with a different type of collection, such as the Hash-table (or Hash-map, dictionary, etc...)
 
@@ -75,5 +75,5 @@ Truthfully the Array could be defined as a sub-type of the dictionary with the k
 	
 More specialized types of collections can be built by sub-classing these two to provide any required semantics. For instance, a 'stack' could be built from an array in a very easy manner. (I'd provide pseudocode, but don't wish to risk pushing the language in a specific direction without more thought)
 
-###Other Thoughts
+## Other Thoughts
 A pointer and/or reference type specialization is required in any language that is generic enough to be used for both freestanding (ie: bare-metal) work - like embedded or OS kernel level systems work - system library and utility and user program. That means that this language should include them - but what semantics they should have and what restrictions and requirements for their use should exist will either require someone with more experience at that level of programming than I have or a lot more research and thought on my part.
