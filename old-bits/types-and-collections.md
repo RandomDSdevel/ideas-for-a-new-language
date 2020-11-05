@@ -77,6 +77,3 @@ More specialized types of collections can be built by sub-classing these two to 
 
 ###Other Thoughts
 A pointer and/or reference type specialization is required in any language that is generic enough to be used for both freestanding (ie: bare-metal) work - like embedded or OS kernel level systems work - system library and utility and user program. That means that this language should include them - but what semantics they should have and what restrictions and requirements for their use should exist will either require someone with more experience at that level of programming than I have or a lot more research and thought on my part.
-
-	
-	
