@@ -58,6 +58,7 @@ Of those seven sub-types, only the first two are required in any generic program
 A collection is a classic idea in programming, and a useful one. Historically most languages have had just one collection - the Array. While this is good for a very large selection of use cases, some things are better with a different type of collection, such as the Hash-table (or Hash-map, dictionary, etc...)
 
 For simplicities sake, and because almost all other data structures can be built from sub-classes of just two distinct types of collections, only those two types of collections are going to be specified for inclusion as built-in parts of the type-system. Those are:
+
   1. The Array
   2. The Dictionary
 
