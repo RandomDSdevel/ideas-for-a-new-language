@@ -4,6 +4,7 @@
 By design the most basic type that exists in this specification is the raw "Object" type. It, however, is not a real type - you cannot instantiate a member of type 'Object', as it is not actually a type but a specification of a set of interfaces that all objects must possess and can override as needed.
 
 For the widest degree of genericity and utility the following base types are specified as part of the language specification:
+
   1. Number
     * Stores a number in an implementation defined multi-precision format to remove machine-level constraints
 	* By being stored in a multi-precision format, all values represented by the Number 'type' carry a sign
